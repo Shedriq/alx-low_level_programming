@@ -25,6 +25,7 @@ int main(void)
 			printf("%ld, ", num1);
 			printf("%ld, ", num2);
 			r = num1 + num2;
+			num1 = num2;
 			num2 = r;
 		}
 		else
