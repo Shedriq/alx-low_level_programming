@@ -10,35 +10,32 @@
 
 void print_times_table(int n)
 {
-	int i, j, ret;
+	int a;
+	int b;
+	int c;
 
 	if (n >= 0 && n <= 15)
 	{
-		for (j = 0; j <= n; j++)
+		for (a = 0; a <= n; a++)
 		{
-			_putchar('0');
-			for (i = 1; i <= n; i++)
+			putchar('0');
+			for (b = 1; b <= n; b++)
 			{
-				ret = i * j;
-				if (ret <= 9)
+				putchar(',');
+				putchar(' ');
+				c = a * b;
+				if (c <= 9)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(ret + '0');
+					putchar(' ');
+					putchar(' ');
 				}
-				else if (ret > 9 && ret <= 99)
+				else if (c <= 99)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(ret / 100 + '0');
-					_putchar((ret / 10) % 10 + '0');
-					_putchar(ret % 10 + '0');
+					putchar(' ');
 				}
+				printf("%d", c);
 			}
-			_putchar('\n');
+			putchar('\n');
 		}
 	}
 }
