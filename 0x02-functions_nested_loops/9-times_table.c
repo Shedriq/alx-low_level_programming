@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * times_table - Entry point
@@ -37,6 +38,6 @@ void times_table(void)
 				}
 			}
 		}
-		_putchar('\n');
+	_putchar('\n');
 	}
 }
