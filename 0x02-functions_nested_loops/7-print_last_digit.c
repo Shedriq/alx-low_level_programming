@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_last_digit - Entry point
+ * print_last_digit - Check main
  * Description: This function prints the last digit of a number
  * @n: the integer to be processed
  * Return: the last digit of n
