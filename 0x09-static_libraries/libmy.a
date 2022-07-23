@@ -1,0 +1,68 @@
+!<arch>
+0-isupper.o/    0           0     0     644     33        `
+#!/bin/bash
+int _isupper(int c);
+
+0-memset.o/     0           0     0     644     60        `
+#!/bin/bash
+char *_memset(char *s, char b, unsigned int n);
+0-strcat.o/     0           0     0     644     50        `
+#!/bin/bash
+char *_strcat(char *dest, char *src);
+1-isdigit.o/    0           0     0     644     33        `
+#!/bin/bash
+int _isdigit(int c);
+
+1-memcpy.o/     0           0     0     644     66        `
+#!/bin/bash
+char *_memcpy(char *dest, char *src, unsigned int n);
+1-strncat.o/    0           0     0     644     58        `
+#!/bin/bash
+char *_strncat(char *dest, char *src, int n);
+100-atoi.o/     0           0     0     644     32        `
+#!/bin/bash
+int _atoi(char *s);
+2-strchr.o/     0           0     0     644     44        `
+#!/bin/bash
+char *_strchr(char *s, char c);
+2-strlen.o/     0           0     0     644     34        `
+#!/bin/bash
+int _strlen(char *s);
+2-strncpy.o/    0           0     0     644     58        `
+#!/bin/bash
+char *_strncpy(char *dest, char *src, int n);
+3-islower.o/    0           0     0     644     33        `
+#!/bin/bash
+int _islower(int c);
+
+3-puts.o/       0           0     0     644     33        `
+#!/bin/bash
+void _puts(char *s);
+
+3-strcmp.o/     0           0     0     644     45        `
+#!/bin/bash
+int _strcmp(char *s1, char *s2);
+
+3-strspn.o/     0           0     0     644     57        `
+#!/bin/bash
+unsigned int _strspn(char *s, char *accept);
+
+4-isalpha.o/    0           0     0     644     33        `
+#!/bin/bash
+int _isalpha(int c);
+
+4-strpbrk.o/    0           0     0     644     0         `
+5-strstr.o/     0           0     0     644     57        `
+#!/bin/bash
+char *_strstr(char *haystack, char *needle);
+
+6-abs.o/        0           0     0     644     29        `
+#!/bin/bash
+int _abs(int n);
+
+9-strcpy.o/     0           0     0     644     50        `
+#!/bin/bash
+char *_strcpy(char *dest, char *src);
+_putchar.o/     0           0     0     644     34        `
+#!/bin/bash
+int _putchar(char c);
