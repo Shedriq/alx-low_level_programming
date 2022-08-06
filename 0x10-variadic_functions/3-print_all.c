@@ -1,107 +1,46 @@
 #include "variadic_functions.h"
 
 /**
- * print_char - prints a char.
- * @arg: a list of arguments pointing to the character to be printed
- */
-
-void print_char(va_list arg)
-{
-	char letter;
-
-	letter = va_arg(arg, int);
-
-	printf("%c", letter);
-}
-
-/**
- * print_int - prints an int.
- * @arg: a list of arguments pointing to the integer to be printed
- */
-
-void print_int(va_list arg)
-{
-	int num;
-
-	num = va_arg(arg, int);
-
-	printf("%d", num);
-}
-
-/**
- * print_float - prints a float
- * @arg: a list of arguments pointing to the float to be printed
- */
-
-void print_float(va_list arg)
-{
-	float num;
-
-	num = va_arg(arg, double);
-
-	printf("%f", num);
-}
-
-/**
- * print_string - prints a string
- * @arg: a list of arguments pointing to the string to be printed
- */
-
-void print_string(va_list arg)
-{
-	char *str;
-
-	str = va_arg(arg, char *);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", str);
-}
-
-/**
  * print_all - prints anything
- * @format: format of input
- * Return: nothing
+ * @format: is a list of types of agruments
+ * Return: void
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
-
-	int i = 0, j = 0;
-
-	char *separator = "";
-
-	printer_t funcs[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string}
-	};
+	int i = 0;
+	char *str, *separator = "";
 
 	va_start(args, format);
-
-	while (format && (*(format + i)))
+	if (format)
 	{
-		j = 0;
-
-		while (j < 4 && (*(format + i) != *(funcs[j].symbol)))
-			j++;
-
-		if (j < 4)
+		while (format[i])
 		{
-			printf("%s", separator);
-			funcs[j].print(args);
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", separator, va_arg(args, int));
+					break;
+				case 'i':
+					printf("%s%d", separator, va_arg(args, int));
+					break;
+				case 'f':
+					printf("%s%f", separator, va_arg(args, double));
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", separator, str);
+					break;
+				default:
+					i++;
+					continue;
+			}
 			separator = ", ";
+			i++;
 		}
-
-		i++;
 	}
-
 	printf("\n");
-
 	va_end(args);
 }
