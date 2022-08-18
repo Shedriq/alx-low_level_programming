@@ -1,18 +1,23 @@
 #include "main.h"
 
 /**
- * clear_bit - sets a bit at a position to 0
- * @n: the number to be used
- * @index: position to be cleared
+ * clear_bit - func that sets the value of a bit to zero
+ * @n: number ot be processed
+ * @index: index to set the value
  *
- * Return: 1 on success, -1 on failure.
+ * Return: 1 if it worked or -1 otherwise
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (n == NULL || (index > (sizeof(unsigned long int) * 8) - 1))
-		return (-1);
+	unsigned long int size;
+	unsigned long int mask;
 
-	*n *= ~(1 << index);
+	size = sizeof(*n) * 8 - 1;
+	if (index > size)
+	{
+		return (-1);
+	}
+	mask = 1 << index;
+	*n = *n & ~mask;
 	return (1);
 }
